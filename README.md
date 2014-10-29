@@ -1,4 +1,6 @@
-# A Sample Java web application showcasing Spring MVC in a Wizard UI
+# Spring MVC in a Wizard UI Sample
+
+[![Build Status](https://drone.io/github.com/kkapelon/spring-mvc-wizard-sample/status.png)](https://drone.io/github.com/kkapelon/spring-mvc-wizard-sample/latest)
 
 ##Instructions
 

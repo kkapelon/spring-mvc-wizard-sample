@@ -13,7 +13,7 @@ import geb.Browser
  */
 class TrivialGebSpec extends GebSpec {
 
-	def "Reading a simple entry - happy path"() {
+	def "Trivial Geb test with Google"() {
 		when: "I search wikipedia in Google"
 		Browser.drive {
 			go "http://google.com/ncr"

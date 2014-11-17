@@ -115,14 +115,12 @@
 			<version>${gebVersion}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
-			<groupId>com.github.detro.ghostdriver</groupId>
-			<artifactId>phantomjsdriver</artifactId>
-			<version>1.1.0</version>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-firefox-driver</artifactId>
+			<version>${seleniumVersion}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
@@ -140,8 +138,26 @@
 				<configuration>
 					<useFile>false</useFile>
 					<includes>
-						<include>**/*Spec.java</include>
 						<include>**/*Test.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.18</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<useFile>false</useFile>
+					<includes>
+						<include>**/*Spec.java</include>
 					</includes>
 				</configuration>
 			</plugin>

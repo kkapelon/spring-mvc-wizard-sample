@@ -4,10 +4,8 @@
 	See: http://www.gebish.org/manual/current/configuration.html
 */
 
-import org.openqa.selenium.phantomjs.PhantomJSDriver
-import org.openqa.selenium.remote.DesiredCapabilities
-driver = {
-    new PhantomJSDriver(new DesiredCapabilities())
-}
+import org.openqa.selenium.firefox.FirefoxDriver
+
+driver = { new FirefoxDriver() }
 
 baseUrl = "http://gebish.org"

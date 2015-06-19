@@ -92,22 +92,16 @@
 		</dependency>
 
 
-		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy-all</artifactId>
-			<version>${groovyVersion}</version>
-		</dependency>
+		 <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.4.1</version>
+        </dependency>
 		<dependency>
 			<groupId>org.spockframework</groupId>
 			<artifactId>spock-core</artifactId>
-			<version>0.7-groovy-2.0</version>
+			<version>1.0-groovy-2.4</version>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.codehaus.groovy</groupId>
-					<artifactId>groovy-all</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.gebish</groupId>
@@ -124,7 +118,8 @@
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib-nodep</artifactId>
-			<version>2.2.2</version>
+			<version>3.1</version>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
@@ -134,7 +129,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-
+				<version>3.1</version>
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
@@ -148,6 +143,7 @@
 					<useFile>false</useFile>
 					<includes>
 						<include>**/*Test.java</include>
+						<include>**/*Spec.java</include>
 					</includes>
 				</configuration>
 			</plugin>
@@ -171,55 +167,23 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.gmaven</groupId>
-				<artifactId>gmaven-plugin</artifactId>
+                <groupId>org.codehaus.gmavenplus</groupId>
+                <artifactId>gmavenplus-plugin</artifactId>
 				<version>1.4</version>
-				<configuration>
-					<providerSelection>1.8</providerSelection>
-				</configuration>
 				<executions>
 					<execution>
 						<goals>
+							<goal>compile</goal>
 							<goal>testCompile</goal>
 						</goals>
 					</execution>
 				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>org.codehaus.gmaven.runtime</groupId>
-						<artifactId>gmaven-runtime-1.8</artifactId>
-						<version>1.4</version>
-						<exclusions>
-							<exclusion>
-								<groupId>org.codehaus.groovy</groupId>
-								<artifactId>groovy-all</artifactId>
-							</exclusion>
-						</exclusions>
-					</dependency>
-					<dependency>
-						<groupId>org.codehaus.groovy</groupId>
-						<artifactId>groovy-all</artifactId>
-						<version>1.8.6</version>
-					</dependency>
-					<dependency>
-						<groupId>org.spockframework</groupId>
-						<artifactId>spock-core</artifactId>
-						<version>0.7-groovy-1.8</version>
-						<exclusions>
-							<exclusion>
-								<groupId>org.codehaus.groovy</groupId>
-								<artifactId>groovy-all</artifactId>
-							</exclusion>
-						</exclusions>
-					</dependency>
-				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
 	<properties>
 		<gebVersion>0.10.0</gebVersion>
 		<seleniumVersion>2.43.1</seleniumVersion>
-		<groovyVersion>2.3.6</groovyVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>

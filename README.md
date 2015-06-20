@@ -18,4 +18,18 @@ mvn tomcat:run
 
 ....and navigate your browser to  http://localhost:8080/wizard/index.html
 
+##To run unit tests
+
+```
+mvn test
+```
+
+
+##To run functional tests
+
+```
+mvn verify
+```
+
+
 Enjoy!

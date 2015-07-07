@@ -20,10 +20,7 @@ class HomePageSpec extends GebSpec {
 		}
 		
 		then: "First page should load"
-		Browser.drive {
-			// make sure we actually got to the page
-			title == "Spring Wizard"
-		}
+		title == "Spring Wizard"
 		
 	}
 

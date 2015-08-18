@@ -1,6 +1,6 @@
 # Spring MVC in a Wizard UI Sample
 
-[![Build Status](https://drone.io/github.com/kkapelon/spring-mvc-wizard-sample/status.png)](https://drone.io/github.com/kkapelon/spring-mvc-wizard-sample/latest)
+[![Build Status](https://snap-ci.com/kkapelon/spring-mvc-wizard-sample/branch/master/build_image)](https://snap-ci.com/kkapelon/spring-mvc-wizard-sample/branch/master)
 
 ##Instructions
 

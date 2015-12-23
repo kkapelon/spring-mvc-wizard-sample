@@ -1,0 +1,41 @@
+plugins {
+	id "com.bmuschko.tomcat" version "2.2.4"
+  }
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+group = 'com.codepipes.wizard'
+version = '0.0.1-SNAPSHOT'
+
+description = """VM Wizard"""
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+     mavenCentral()
+}
+dependencies {
+    compile group: 'org.springframework', name: 'spring-web', version:'4.1.6.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version:'4.1.6.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context-support', version:'4.1.6.RELEASE'
+    compile group: 'org.freemarker', name: 'freemarker', version:'2.3.18'
+    compile group: 'org.slf4j', name: 'jcl-over-slf4j', version:'1.6.1'
+    compile group: 'org.slf4j', name: 'slf4j-api', version:'1.6.1'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version:'0.9.26'
+    compile group: 'ch.qos.logback', name: 'logback-core', version:'0.9.26'
+    compile group: 'commons-lang', name: 'commons-lang', version:'2.6'
+    compile group: 'commons-io', name: 'commons-io', version:'2.0.1'
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version:'2.4.1'
+    testCompile group: 'junit', name: 'junit', version:'4.9'
+    testCompile group: 'org.spockframework', name: 'spock-core', version:'1.0-groovy-2.4'
+    testCompile group: 'org.gebish', name: 'geb-spock', version:'0.10.0'
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version:'2.46.0'
+    testCompile group: 'cglib', name: 'cglib-nodep', version:'3.1'
+	
+	def tomcatVersion = '7.0.59'
+	tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+		   "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+		   "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}

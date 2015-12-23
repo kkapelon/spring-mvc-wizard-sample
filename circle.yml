@@ -6,4 +6,4 @@ dependencies:
     - gradle dependencies
 test:
   override:
-    - gradle test
+    - gradle build

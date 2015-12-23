@@ -1,6 +1,7 @@
 general:
   artifacts:
-    - "build/libs/wizard-0.0.1-SNAPSHOT.war" 
+    - "build/libs/wizard-*.war" 
+    - "build/reports/tests/*" 
 dependencies:
   pre:
     - gradle --version

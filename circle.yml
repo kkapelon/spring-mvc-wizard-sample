@@ -1,3 +1,9 @@
 general:
   artifacts:
-    - "build/libs/wizard-0.0.1-SNAPSHOT.war" # relative to the build directory
+    - "build/libs/wizard-0.0.1-SNAPSHOT.war" 
+dependencies:
+  override:
+    - gradle dependencies
+test:
+  override:
+    - gradle test

@@ -2,6 +2,8 @@ general:
   artifacts:
     - "build/libs/wizard-0.0.1-SNAPSHOT.war" 
 dependencies:
+  pre:
+    - gradle --version
   override:
     - gradle dependencies
 test:

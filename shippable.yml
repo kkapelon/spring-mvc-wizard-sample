@@ -1,17 +1,17 @@
 language: java
 
 jdk:
-   - openjdk7
    - oraclejdk7
-   - openjdk6
-   - oraclejdk8
 
 script:
    - gradle --version
    - lein --version
    - mvn --version
-   - mvn test
+   - mvn test cobertura:cobertura
 
 after_success:
-   - mvn cobertura:cobertura
- 
+   - mkdir shippable 
+   - copy target/*.jar shippable 
+
+
+archive: true

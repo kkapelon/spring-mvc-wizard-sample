@@ -14,9 +14,9 @@ script:
 
 after_success:
    - ls -la
-   - cp target/*.jar shippable 
-   - cp -r target/codecoverage shippable
-   - cp -r target/testresults shippable
+   - cp target/*.war shippable 
+   - cp -r target/cobertura shippable/codecoverage
+   - cp -r target/surefire-reports shippable/testresults
 
 
 

@@ -3,6 +3,9 @@ language: java
 jdk:
    - oraclejdk7
 
+install:
+   - mvn dependency:go-offline
+
 script:
    - gradle --version
    - lein --version

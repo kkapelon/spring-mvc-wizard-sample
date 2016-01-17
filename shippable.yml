@@ -10,9 +10,11 @@ script:
    - mvn cobertura:cobertura package
 
 after_success:
-   - cp -r target/codecoverage shippable
-   - cp-r target/testresults shippable
+   - ls -la
    - cp target/*.jar shippable 
+   - cp -r target/codecoverage shippable
+   - cp -r target/testresults shippable
+
 
 
 archive: true

@@ -7,11 +7,12 @@ script:
    - gradle --version
    - lein --version
    - mvn --version
-   - mvn test cobertura:cobertura
+   - mvn cobertura:cobertura package
 
 after_success:
-   - mkdir shippable 
-   - copy target/*.jar shippable 
+   - cp -r target/codecoverage shippable
+   - cp-r target/testresults shippable
+   - cp target/*.jar shippable 
 
 
 archive: true

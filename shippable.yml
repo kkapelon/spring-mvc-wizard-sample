@@ -6,6 +6,12 @@ jdk:
    - openjdk6
    - oraclejdk8
 
-after_success:
-   - mvn clean cobertura:cobertura
+script:
+   - gradle --version
+   - lein --version
+   - mvn --version
    - mvn test
+
+after_success:
+   - mvn cobertura:cobertura
+ 

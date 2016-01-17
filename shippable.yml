@@ -10,12 +10,12 @@ script:
    - gradle --version
    - lein --version
    - mvn --version
-   - mvn cobertura:cobertura package
+   - mvn cobertura:cobertura  -Dcobertura.report.format=xml  package
 
 after_success:
    - ls -la
    - cp target/*.war shippable 
-   - cp -r target/cobertura shippable/codecoverage
+   - cp -r target/site/cobertura/* shippable/codecoverage
    - cp -r target/surefire-reports shippable/testresults
 
 

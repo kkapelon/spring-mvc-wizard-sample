@@ -3,6 +3,10 @@ java:
   maven_version: '3.3.3'   # See our Java documentation for versions
 tests:
   - mvn verify
+  - type: junit
+    command: mvn test
+    report_files:
+    - "target/surefire-reports/*.xml"  
 cache:
   key_paths:     # Define the files Solano will use to determine when to rebuild your cache
   - pom.xml

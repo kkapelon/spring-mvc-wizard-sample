@@ -3,3 +3,8 @@ java:
   maven_version: '3.3.3'   # See our Java documentation for versions
 tests:
   - mvn verify
+cache:
+  key_paths:     # Define the files Solano will use to determine when to rebuild your cache
+  - pom.xml
+  save_paths:    # Define the paths to save into the cache
+  - HOME/.m2     # Make sure to include the whole .m2 directory.  Also note it's "HOME", not "$HOME"

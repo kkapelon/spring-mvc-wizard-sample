@@ -1,1 +1,3 @@
 language: java
+install: gradle --version
+script: mvn test

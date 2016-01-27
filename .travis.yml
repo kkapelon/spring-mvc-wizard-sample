@@ -1,3 +1,7 @@
 language: java
 install: gradle --version
 script: mvn test
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.gradle

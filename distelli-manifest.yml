@@ -1,0 +1,9 @@
+language: java
+install: 
+ - chmod +x ./gradlew
+ - ./gradlew test
+script: mvn test
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.gradle

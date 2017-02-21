@@ -9,7 +9,6 @@ install:
 build:
     ci:
        - gradle --version
-       - lein --version
        - mvn --version
        - mvn cobertura:cobertura  -Dcobertura.report.format=xml  package
     on_success:

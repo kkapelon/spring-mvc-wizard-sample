@@ -29,5 +29,4 @@ dependencies {
     testCompile group: 'org.gebish', name: 'geb-spock', version:'0.10.0'
     testCompile group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version:'2.46.0'
     testCompile group: 'cglib', name: 'cglib-nodep', version:'3.1'
-	
 }

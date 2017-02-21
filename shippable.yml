@@ -6,17 +6,21 @@ jdk:
 install:
    - mvn dependency:go-offline
 
-script:
-   - gradle --version
-   - lein --version
-   - mvn --version
-   - mvn cobertura:cobertura  -Dcobertura.report.format=xml  package
-
-after_success:
-   - ls -la
-   - cp target/*.war shippable 
-   - cp -r target/site/cobertura/* shippable/codecoverage
-   - cp -r target/surefire-reports shippable/testresults
+build:
+    ci:
+       - gradle --version
+       - lein --version
+       - mvn --version
+       - mvn cobertura:cobertura  -Dcobertura.report.format=xml  package
+    on_success:
+       - ls -la
+       - cp target/*.war shippable 
+       - cp -r target/site/cobertura/* shippable/codecoverage
+       - cp -r target/surefire-reports shippable/testresults
+    cache:
+    cache_dir_list:
+        - ~/.m2
+        - ~/.gradle
 
 
 

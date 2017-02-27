@@ -1,5 +1,7 @@
 box: maven:latest
 build:
   steps:
+    - chmod +x ./gradlew
+    - ./gradlew
     - xenoterracide/maven:
         goals: test

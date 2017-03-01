@@ -4,9 +4,9 @@ java:
   java_version: java-7-openjdk
   maven_version: '3.3.3'   # See our Java documentation for versions
 tests:
-  - mvn verify
-  - sudo docker --version
-  - sudo docker build . -t sample
+  - mvn package
+  - docker --version
+  - docker build . -t sample
   - type: junit
     command: mvn test
     report_files:

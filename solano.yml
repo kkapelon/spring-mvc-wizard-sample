@@ -5,8 +5,6 @@ java:
   maven_version: '3.3.3'   # See our Java documentation for versions
 tests:
   - mvn package
-  - docker --version
-  - docker build . -t sample
   - type: junit
     command: mvn test
     report_files:

@@ -1,0 +1,18 @@
+version: '1.0'
+
+steps:
+
+    unit_test:
+      title: Unit Tests
+      image: maven:latest
+      commands:
+        - mvn -version
+        - mvn package
+
+    build_image:
+      title: Building Image
+      type: build
+      dockerfile: Dockerfile
+      image_name: codepipes/spring-mvn-wizard-sample
+
+

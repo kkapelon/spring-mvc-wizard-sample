@@ -1,0 +1,8 @@
+FROM maven:3-jdk-7 
+RUN mkdir -p /tmp/app/src
+COPY pom.xml /tmp/app/
+COPY src /tmp/app/src
+WORKDIR /tmp/app
+RUN cd .  && ls -la
+RUN mvn package
+

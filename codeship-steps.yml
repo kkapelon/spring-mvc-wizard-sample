@@ -1,4 +1,8 @@
 - name: compile
-  tag: codeship
+  #tag: codeship
+  service: wizard-build
+  command: ls -l 
+- name: package
+  #tag: codeship
   service: wizard
   command: echo "sddfsdfsdfds"

@@ -1,6 +1,12 @@
+wizard-build:
+  build:
+    dockerfile_path: Dockerfile.build
+  volumes:
+      - /tmp/app:/tmp/app/
 wizard:
   build:
-    image: kkapelon/wizard
     dockerfile_path: Dockerfile
   ports:
       - "8080:8080"
+  volumes:
+      - /tmp/app:/tmp/app

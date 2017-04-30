@@ -1,0 +1,6 @@
+wizard:
+  build:
+    image: kkapelon/wizard
+    dockerfile_path: Dockerfile
+  ports:
+      - "8080:8080"

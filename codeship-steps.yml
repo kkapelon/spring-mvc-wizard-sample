@@ -1,0 +1,4 @@
+- name: compile
+  tag: codeship
+  service: wizard
+  command: echo "sddfsdfsdfds"

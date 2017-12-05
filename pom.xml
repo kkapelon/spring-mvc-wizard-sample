@@ -84,11 +84,17 @@
 
 
 		<!-- Testing -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.9</version>
-			<scope>test</scope>
+		 <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+       <dependency>
+			<groupId>org.codehaus.groovy.modules.http-builder</groupId>
+			<artifactId>http-builder</artifactId>
+			<version>0.7.1</version>
+			  <scope>test</scope>
 		</dependency>
 
 
@@ -101,18 +107,6 @@
 			<groupId>org.spockframework</groupId>
 			<artifactId>spock-core</artifactId>
 			<version>1.0-groovy-2.4</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.gebish</groupId>
-			<artifactId>geb-spock</artifactId>
-			<version>${gebVersion}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-firefox-driver</artifactId>
-			<version>${seleniumVersion}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -213,8 +207,6 @@
 		</plugins>
 	</build>
 	<properties>
-		<gebVersion>0.10.0</gebVersion>
-		<seleniumVersion>2.46.0</seleniumVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>

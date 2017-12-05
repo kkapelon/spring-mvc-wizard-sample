@@ -1,27 +1,38 @@
 
 package com.codepipes.wizard;
 
-import geb.spock.GebSpec
+import groovyx.net.http.RESTClient
 import spock.lang.*
-import geb.spock.GebReportingSpec
-import geb.Browser
 
 /**
- * Trivial Geb test
+ * Trivial homepage test. Just verifies that the application is running.
+ * 
  * @author Kostis
  *
  */
-class HomePageSpec extends GebSpec {
+class HomePageSpec extends Specification {
+	
+	@Shared
+	def client = new RESTClient("http://localhost:8080/wizard/")
 
-	def "Trivial Geb test with Google"() {
-		when: "I go to homepage"
-		Browser.drive {
-			go "http://localhost:8080/wizard/index.html"
+	def "Homepage exists"() {
+		when: "a rest call is performed to the main page"
+		def response = client.get(path : "index.html")
+		
+		then: "the correct message is expected"
+		with(response) {
+			status == 200
 		}
+	}
+	
+	def "About Page exists"() {
+		when: "a rest call is performed to the about page"
+		def response = client.get(path : "about.html")
 		
-		then: "First page should load"
-		title == "Spring Wizard"
-		
+		then: "the correct message is expected"
+		with(response) {
+			status == 200
+		}
 	}
 
 	

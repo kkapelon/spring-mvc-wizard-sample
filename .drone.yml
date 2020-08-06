@@ -1,0 +1,14 @@
+kind: pipeline
+name: default
+
+steps:
+- name: test
+  image: maven:3.5.2-jdk-8-alpine
+  commands:
+  - pwd
+  - mvn test
+- name: package
+  image: maven:3.5.2-jdk-8-alpine
+  commands:
+  - ls -l 
+  - mvn package

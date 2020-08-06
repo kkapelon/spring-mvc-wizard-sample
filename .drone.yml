@@ -5,10 +5,10 @@ steps:
 - name: test
   image: maven:3.5.2-jdk-8-alpine
   commands:
-  - pwd
+  - ls -laF
   - mvn test
 - name: package
   image: maven:3.5.2-jdk-8-alpine
   commands:
-  - ls -l 
+  - ls -laF
   - mvn package

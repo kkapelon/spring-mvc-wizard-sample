@@ -12,3 +12,9 @@ steps:
   commands:
   - ls -laF
   - mvn package
+- name: docker  
+  image: plugins/docker
+  settings:
+    dry_run: true
+    repo: kkapelon/spring-sample
+    tags: latest
